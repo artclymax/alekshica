@@ -1,0 +1,113 @@
+@use "../tools" as *;
+
+.footer {
+	background: var(--color-white);
+	padding-block: 30px;
+	&__container {
+		@include flex-column;
+		gap: adapt(30, 20);
+	}
+
+	&__top {
+		padding-top: adapt(30, 10);
+		border-top: 1px solid var(--color-soft-gray);
+
+		display: grid;
+		grid-template-columns: 0.8fr 0.6fr 1fr;
+		gap: 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__info {
+		@include flex-column;
+		gap: 20px;
+		align-items: center;
+		max-width: 285px;
+		@include media($mobile) {
+			justify-self: center;
+		}
+	}
+
+	&__logo {
+	}
+
+	&__descr {
+		@include small-text;
+		@include media($mobile) {
+			text-align: center;
+		}
+	}
+
+	&__menu {
+	}
+
+	&__contacts-box {
+		.contacts-box {
+			@include body;
+			.phones-box__number {
+				@include body;
+			}
+		}
+	}
+
+	&__bottom {
+		padding-top: adapt(20, 10);
+		border-top: 1px solid var(--color-soft-gray);
+
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 10px 20px;
+		justify-content: space-between;
+
+		font-weight: 500;
+		font-size: 14px;
+		color: var(--color-text-gray);
+
+		@include media($mobile) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__copy {
+		font: inherit;
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		flex-wrap: wrap;
+	}
+
+	&__link {
+	}
+}
+
+.footer-col {
+	@include flex-column;
+	gap: 20px;
+	&__title {
+		color: var(--color-primary-green);
+	}
+}
+
+.footer-menu {
+	@include reset-list;
+	@include flex-column;
+	gap: 20px;
+	@include media($mobile, min) {
+		@include menu;
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+		display: inline-flex;
+		transition: all 0.3s;
+		@include hover-link;
+	}
+}

@@ -1,0 +1,162 @@
+@use "../tools" as *;
+
+.hero {
+	position: relative;
+	padding-top: calc(var(--header-height) + 89px);
+	padding-bottom: 60px;
+
+	@include media($tablet) {
+		padding-top: calc(var(--header-height) + 40px);
+		padding-bottom: 0;
+	}
+
+	&__container {
+		display: flex;
+		gap: 20px;
+
+		@include media($tablet) {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		flex: 0 1 49%;
+		align-self: flex-start;
+
+		position: relative;
+		z-index: 1;
+		margin-top: 55px;
+
+		display: flex;
+		flex-direction: column;
+		gap: adapt(40, 20);
+
+		@include media($tablet) {
+			margin-top: 0;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: -98px;
+			right: -10px;
+			bottom: -80px;
+			left: -233px;
+			background: var(--color-white);
+			filter: blur(200px);
+
+			@include media($tablet) {
+				top: 0;
+				right: 0;
+				bottom: 70px;
+				left: 0;
+				filter: blur(50px);
+			}
+		}
+	}
+
+	&__title {
+		padding-bottom: adapt(40, 10);
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 31%;
+			height: 2px;
+			background: var(--color-primary-green);
+
+			@include media($tablet) {
+				width: 100%;
+			}
+		}
+
+		@include media($tablet) {
+			@include title-1;
+			padding-bottom: adapt(40, 10);
+		}
+	}
+
+	&__descr {
+		font-size: 18px;
+
+		@include media($mobile-sm) {
+			text-wrap: balance;
+		}
+	}
+
+	&__btn {
+	}
+
+	&__list {
+		@include reset-list;
+		position: relative;
+		z-index: 1;
+
+		flex: 0 1 calc(51% - 20px);
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 85px 20px;
+
+		@include media($tablet) {
+			gap: 20px;
+		}
+
+		@include media($mobile-sm) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+	}
+
+	&__bg-box {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__bg-big {
+	}
+
+	&__bg-small {
+		object-position: top !important;
+	}
+}
+
+.hero-item {
+	&__image {
+		display: flex;
+		height: 214px;
+		overflow: hidden;
+		
+		img {
+			transition: all 0.3s;
+			transform: scale(1);
+		}
+
+		@include hover {
+			img {
+				transform: scale(1.1);
+			}
+		}
+
+		@include media($tablet) {
+			height: 255px;
+		}
+	}
+
+	&__text {
+		@include reset;
+		background: var(--color-warm-light-bg);
+		padding: adapt(16, 10) 10px;
+		text-align: center;
+	}
+}

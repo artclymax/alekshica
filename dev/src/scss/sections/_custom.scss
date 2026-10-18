@@ -1,0 +1,168 @@
+@use "../tools" as *;
+
+.custom {
+	&__container {
+		display: flex;
+		flex-direction: column;
+
+		.section-header {
+			align-self: flex-end;
+			max-width: calc(100% - 41% - 20px);
+
+			@include media($tablet) {
+				max-width: 100%;
+				align-self: normal;
+			}
+
+			&:not(:last-child) {
+				@include media($tablet) {
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	&__terms {
+	}
+
+	&__content {
+		margin-top: 40px;
+
+		display: flex;
+		justify-content: space-between;
+		gap: 40px 20px;
+
+		@include media($tablet) {
+			flex-direction: column;
+		}
+	}
+
+	&__options {
+		@include reset-list;
+
+		flex: 0 1 41%;
+		align-self: flex-start;
+
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: adapt(20, 10) 8px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+			align-self: normal;
+		}
+	}
+
+	&__overview {
+		flex: 0 1 calc(100% - 41% - 20px);
+	}
+
+	&__visual {
+		position: relative;
+		margin-top: 40px;
+		height: adapt(576, 269);
+
+		@include media($tablet) {
+			margin-top: 0;
+		}
+	}
+
+	&__image {
+		&--first {
+			box-shadow: 0 6px 2px 0 rgba(47, 107, 67, 0.1);
+			height: adapt(422, 207);
+		}
+
+		&--second {
+			position: absolute;
+			z-index: 2;
+			bottom: 0;
+			right: 0;
+			height: adapt(291, 165);
+			width: 56%;
+			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+
+			@include media($tablet) {
+				width: 40%;
+			}
+
+			@include media($mobile) {
+				width: 50%;
+			}
+
+			@include media($mobile-sm) {
+				width: 65%;
+			}
+		}
+	}
+}
+
+.custom-terms {
+	@include reset-list;
+
+	background: var(--color-white);
+	padding: adapt(20, 10);
+
+	&__item {
+		@include lead-text;
+		color: var(--color-black);
+
+		@include media($tablet) {
+			@include body;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+
+		strong {
+			font-weight: 700;
+			color: var(--color-primary-green);
+
+			@include media($tablet) {
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+.custom-options-item {
+	padding: 10px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		flex-grow: 1;
+
+		@include media($mobile) {
+			flex-direction: row;
+		}
+	}
+
+	&__icon {
+		height: adapt(52, 26);
+		flex-shrink: 0;
+		align-self: flex-start;
+
+		img {
+			height: 100%;
+		}
+	}
+
+	&__title {
+		@include reset;
+		@include lead-text;
+
+		flex-grow: 1;
+		color: var(--color-black);
+	}
+
+	&__descr {
+		@include small-text;
+	}
+}

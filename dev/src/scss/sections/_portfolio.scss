@@ -1,0 +1,82 @@
+@use "../tools" as *;
+
+.portfolio {
+	@include flex-column;
+	gap: adapt(60, 40);
+
+	&__container {
+		width: 100%;
+	}
+	.section-header {
+		max-width: 960px;
+	}
+	&__slider {
+		@include media($tablet, min) {
+			--container-width: 1270px;
+			padding-inline: 44px;
+		}
+		width: 100%;
+		position: relative;
+	}
+}
+
+.portfolio-swiper {
+	width: 100%;
+	&__wrapper {
+	}
+
+	&__btn-box {
+	}
+
+	&__btn {
+		@include media($tablet, min) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__btn-prev {
+		@include media($tablet, min) {
+			left: 0;
+			transform: translateY(-50%) translateX(50%);
+		}
+	}
+
+	&__btn-next {
+		@include media($tablet, min) {
+			right: 0;
+			transform: translateY(-50%) translateX(-50%);
+		}
+	}
+}
+
+.portfolio-slide {
+	&__wrapper {
+		padding: 10px;
+	}
+
+	&__image {
+		display: block;
+		height: 541px;
+		width: 100%;
+	}
+
+	&__title {
+	}
+}
+.card-box {
+}
+.image-box {
+}
+.visually-hidden {
+}
+.swiper-btn-box {
+}
+.swiper-btn {
+	&__prev {
+	}
+
+	&__next {
+	}
+}

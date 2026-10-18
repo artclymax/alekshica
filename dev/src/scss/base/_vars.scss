@@ -1,0 +1,59 @@
+@use "../tools" as *;
+
+:root {
+	--color-0: rgba(0, 0, 0, 0);
+	--color-black: #000;
+	--color-white: #fff;
+
+	--color-primary-green: #2f6b43;
+	--color-secondary-green: #7ea57a;
+	--color-accent-red: #b8443e;
+	--color-dark-text: #2a2a2a;
+	--color-warm-light-bg: #f7f5f1;
+	--color-soft-gray: #e6e2da;
+	--color-text-gray: #5e6b78;
+
+	// ===== Layouts =====
+	--form-height: 486px;
+	--header-height: 117px;
+
+	@include media($mobile) {
+		--header-height: 74px;
+	}
+
+	--section-padding: #{adapt(120, 60)};
+	--section-padding-05: #{adapt(60, 30)};
+
+	--container-width: 1200px;
+	--container-padding: 10px;
+
+	// ===== Fonts =====
+	--font-size-html: 100%;
+	--font-size: #{adapt(18, 16)};
+
+	--font-family-main: "Inter-VF", "Inter_18pt", sans-serif;
+	--font-family-secondary: "Manrope-VF", "Manrope", sans-serif;
+
+	--line-height: 120%;
+	--letter-spacing: normal;
+
+	// ===== Border Radius =====
+	--radius-xl: 40px;
+	--radius-l: 24px;
+	--radius-m: 32px;
+	--radius-s: 4px;
+
+	// ===== Transitions =====
+	--transition-fast: 0.2s ease;
+	--transition-normal: 0.3s ease;
+	--transition-slow: 0.5s ease;
+
+	// ===== Z-Index =====
+	--z-dropdown: 100;
+	--z-sticky: 200;
+	--z-fixed: 300;
+	--z-modal-backdrop: 400;
+	--z-modal: 500;
+	--z-popover: 600;
+	--z-tooltip: 700;
+}

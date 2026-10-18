@@ -1,0 +1,19 @@
+@use "../tools" as *;
+
+.contacts {
+	position: relative;
+	&__wrapper {
+		@include flex-column;
+		gap: adapt(40, 20);
+		max-width: 580px;
+	}
+
+	&__image {
+		@include image-abs;
+		z-index: -1;
+
+		@include media($mobile) {
+			--object-pos: 70%;
+			}
+	}
+}

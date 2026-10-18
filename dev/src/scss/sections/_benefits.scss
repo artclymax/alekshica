@@ -1,0 +1,91 @@
+@use "../tools" as *;
+
+.benefits {
+	padding-top: var(--section-padding);
+
+	&__container {
+		--width: #{adapt(793, 500, $tablet)};
+	}
+
+	&__image {
+		box-shadow: 0 6px 2px 0 rgba(47, 107, 67, 0.1);
+
+		@include media($tablet) {
+			display: none;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: adapt(40, 20);
+	}
+
+	&__image-small {
+		height: 443px;
+	}
+
+	&__list {
+		--min: 340px;
+		gap: adapt(20, 10);
+	}
+
+	&__item {
+	}
+
+	&__contacts {
+	}
+}
+
+.benefits-item {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	&__icon {
+		height: adapt(52, 26);
+		flex-shrink: 0;
+
+		img {
+			height: 100%;
+		}
+	}
+
+	&__content {
+	}
+
+	&__title {
+		color: var(--color-black);
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__descr {
+		p {
+			@include small-text;
+		}
+	}
+}
+
+.benefits-contacts {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1fr 1.2fr;
+	gap: 20px;
+	@include media($laptop) {
+		grid-template-columns: 1fr 1.3fr;
+	}
+	@include media($mobile) {
+		grid-template-columns: 1fr;
+	}
+	&__title {
+	}
+
+	.phones-box {
+		@include media($mobile, min) {
+			justify-self: end;
+		}
+	}
+}

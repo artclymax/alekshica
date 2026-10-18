@@ -1,0 +1,109 @@
+@use "../tools" as *;
+
+.catalog {
+	@include flex-column;
+	gap: adapt(60, 40);
+	&__container {
+		width: 100%;
+	}
+	&__slider {
+		@include media($tablet, min) {
+			--container-width: 1270px;
+			padding-inline: 44px;
+		}
+		width: 100%;
+		position: relative;
+	}
+}
+
+.catalog-swiper {
+	width: 100%;
+	&__wrapper {
+	}
+
+	&__btn-box {
+	}
+
+	&__btn {
+		@include media($tablet, min) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__btn-prev {
+		@include media($tablet, min) {
+			left: 0;
+			transform: translateY(-50%) translateX(50%);
+		}
+	}
+
+	&__btn-next {
+		@include media($tablet, min) {
+			right: 0;
+			transform: translateY(-50%) translateX(-50%);
+		}
+	}
+}
+
+.catalog-slide {
+	&__wrapper {
+		@include flex-column;
+		padding: adapt(20, 10);
+	}
+
+	&__image {
+		height: 223px;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__title {
+		color: var(--color-black);
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__descr {
+		@include small-text;
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+			padding-bottom: 20px;
+			border-bottom: 1px solid var(--color-soft-gray);
+		}
+	}
+
+	&__params {
+		flex-grow: 1;
+		@include reset-list;
+		@include flex-column;
+		gap: 10px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid var(--color-soft-gray);
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__param {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+	}
+
+	&__param-name {
+		@include small-text;
+		color: var(--color-black);
+	}
+
+	&__param-value {
+	}
+
+	&__price {
+		//margin-top: auto;
+		color: var(--color-accent-red);
+	}
+}

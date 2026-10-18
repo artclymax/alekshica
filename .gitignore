@@ -1,0 +1,16 @@
+﻿# РСЃРєР»СЋС‡Р°РµРј node_modules РёРјРµРЅРЅРѕ РІ РїР°РїРєРµ dev
+dev/node_modules/
+dev/node_modules/*
+
+# РЎС‚Р°РЅРґР°СЂС‚РЅС‹Рµ РёСЃРєР»СЋС‡РµРЅРёСЏ РґР»СЏ Node Рё WP
+node_modules/
+dist/
+build/
+.sass-cache/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+.vscode/
+.idea/

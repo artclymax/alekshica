@@ -1,0 +1,29 @@
+@use "../tools" as *;
+
+.section-header {
+	@include flex-column;
+
+	&__label {
+		@include reset;
+
+		color: var(--color-primary-green);
+
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+	}
+
+	&__title {
+		@include reset;
+		color: var(--color-black);
+		
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__descr {
+		@include reset;
+		max-width: 997px;
+	}
+}

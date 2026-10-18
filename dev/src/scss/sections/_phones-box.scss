@@ -1,0 +1,45 @@
+@use "../tools" as *;
+
+.phones-box {
+	@include reset-list;
+	@include flex-column;
+	gap: 10px;
+
+
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		@include media($mobile) {
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+
+	&__number {
+		@include lead-text;
+		@include reset-link;
+		&.icon {
+			gap: adapt(10, 0);
+			--width: 44px;
+			--bg-size: 18px;
+		}
+		@include media($mobile) {
+			@include title-3;
+		}
+	}
+
+	&__socials {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	&__socials-link {
+		@include square(44px);
+		padding: 6px;
+		img {
+			width: 100%;
+		}
+	}
+}

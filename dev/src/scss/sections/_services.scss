@@ -1,0 +1,129 @@
+@use "../tools" as *;
+
+.services {
+	@include flex-column;
+	gap: adapt(60, 40);
+	&__container {
+		width: 100%;
+	}
+	&__slider {
+		@include media($tablet, min) {
+			--container-width: 1270px;
+			padding-inline: 44px;
+		}
+		width: 100%;
+		position: relative;
+	}
+
+	&__additional-container {
+		width: 100%;
+	}
+
+	&__additional {
+	}
+}
+
+.services-swiper {
+	&__wrapper {
+	}
+
+	&__btn-box {
+	}
+
+	&__btn {
+		@include media($tablet, min) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__btn-prev {
+		@include media($tablet, min) {
+			left: 0;
+			transform: translateY(-50%) translateX(50%);
+		}
+	}
+
+	&__btn-next {
+		@include media($tablet, min) {
+			right: 0;
+			transform: translateY(-50%) translateX(-50%);
+		}
+	}
+}
+
+.services-slide {
+	&.catalog-slide {
+		&__wrapper {
+		}
+
+		&__image {
+		}
+
+		&__title {
+		}
+
+		&__descr {
+		}
+
+		&__price {
+		}
+	}
+}
+
+.services-additional {
+	display: grid;
+	grid-template-columns: 1fr 3.5fr;
+	gap: adapt(60, 20) adapt(45, 20);
+	align-items: center;
+	padding-inline: adapt(60, 10, $mobile);
+	@include media($mobile) {
+		grid-template-columns: 1fr;
+	}
+	&__title {
+		@include media($mobile, min) {
+			justify-self: end;
+		}
+	}
+
+	&__list {
+		gap: adapt(45, 20, $mobile);
+		align-items: center;
+	}
+
+	&__item {
+	}
+
+	.phones-box {
+		grid-column: 1 / -1;
+		@include media($mobile, min) {
+			justify-self: center;
+		}
+	}
+}
+
+.services-additional-item {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	&__image {
+		flex-shrink: 0;
+		height: adapt(52, 26);
+		img {
+			height: 100%;
+		}
+	}
+
+	&__content {
+		@include flex-column;
+		gap: 10px;
+	}
+	&__title {
+		@include lead-text;
+	}
+
+	&__descr {
+		@include small-text;
+	}
+}

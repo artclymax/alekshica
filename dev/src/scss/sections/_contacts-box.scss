@@ -1,0 +1,35 @@
+@use "../tools" as *;
+
+.contacts-box {
+	@include lead-text;
+	@include flex-column;
+	gap: adapt(30, 10);
+	@include media($mobile) {
+		@include body;
+	}
+	.icon {
+		gap: 10px;
+		--width: 44px;
+		--bg-size: 18px;
+	}
+	&__descr {
+		font-style: normal;
+	}
+	.phones-box {
+		&__item {
+		}
+
+		&__number {
+			@include lead-text;
+			@include media($mobile) {
+				@include body;
+			}
+		}
+
+		&__socials {
+		}
+
+		&__socials-link {
+		}
+	}
+}

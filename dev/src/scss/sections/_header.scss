@@ -1,0 +1,93 @@
+@use "../tools" as *;
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: adapt(20, 15);
+	}
+
+	&__logo {
+		flex-shrink: 0;
+	}
+
+	&__menu {
+	}
+
+	&__contacts-box {
+		@include menu;
+		flex-shrink: 0;
+		@include flex-column;
+		gap: adapt(30, 20, $tablet);
+		color: var(--color-dark-text);
+		@include media($tablet) {
+			margin-right: auto;
+		}
+		.icon {
+			--width: 44px;
+			--bg-size: 18px;
+
+			@include media($tablet) {
+				--bg-size: 24px;
+			}
+		}
+
+		.phones-box {
+			&__item {
+				@include media($tablet) {
+					flex-direction: row;
+					align-items: center;
+					gap: 10px;
+				}
+			}
+
+			&__number {
+				@include menu;
+			}
+
+			&__socials {
+				@include media($mobile) {
+					gap: 10px;
+				}
+			}
+
+			&__socials-link {
+			}
+		}
+	}
+
+	&__contacts-time {
+	}
+
+	&__phone {
+	}
+
+	&__burger-btn {
+	}
+}
+
+.header-menu {
+	@include flex-column;
+	gap: 20px !important;
+	&__close-btn {
+		justify-self: end;
+	}
+
+	&__item {
+		@include flex-column;
+		gap:  20px;
+	}
+
+	&__title {
+		color: var(--color-primary-green);
+	}
+
+	&__contacts-box {
+	}
+}
